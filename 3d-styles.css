@@ -1,0 +1,265 @@
+/* 3D Perspective Setup */
+body {
+    perspective: 1000px;
+}
+
+/* Enhanced 3D Card Effect */
+.project-card {
+    transform-style: preserve-3d;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.project-card:hover {
+    transform: rotateY(10deg) rotateX(5deg) translateZ(30px);
+    box-shadow: 
+        0 15px 35px rgba(0, 0, 0, 0.1),
+        0 3px 10px rgba(0, 0, 0, 0.07);
+}
+
+/* Enhanced 3D Logo Animation */
+.logo {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.5s ease;
+}
+
+.logo:hover {
+    animation: logo3D 2s infinite;
+    text-shadow: 0 0 15px rgba(37, 99, 235, 0.5);
+}
+
+@keyframes logo3D {
+    0% { transform: translateZ(0) rotateY(0); }
+    50% { transform: translateZ(50px) rotateY(180deg); }
+    100% { transform: translateZ(0) rotateY(360deg); }
+}
+
+/* Enhanced Skill Category Effect */
+.skill-category {
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(10px);
+}
+
+.skill-category:hover {
+    transform: translateZ(40px) rotateX(5deg);
+    box-shadow: 
+        0 20px 40px rgba(0, 0, 0, 0.1),
+        0 5px 15px rgba(0, 0, 0, 0.07);
+}
+
+/* Enhanced Hero Text Effect */
+.hero h1 {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: float 4s ease-in-out infinite;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+@keyframes float {
+    0% { transform: translateZ(0) translateY(0); }
+    50% { transform: translateZ(30px) translateY(-10px); }
+    100% { transform: translateZ(0) translateY(0); }
+}
+
+/* Enhanced Button Effect */
+.cta-button {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.cta-button:hover {
+    transform: translateZ(30px) scale(1.05);
+    box-shadow: 
+        0 10px 20px rgba(0, 0, 0, 0.1),
+        0 3px 6px rgba(0, 0, 0, 0.05);
+}
+
+/* Enhanced Social Icons */
+.social-icon {
+    transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    display: inline-block;
+    margin: 0 15px;
+    font-size: 1.8rem;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 15px;
+    border-radius: 50%;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    backdrop-filter: blur(5px);
+}
+
+.social-icon:hover {
+    transform: translateZ(40px) scale(1.15);
+    box-shadow: 
+        0 15px 30px rgba(0, 0, 0, 0.15),
+        0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Social Icons specific colors on hover */
+.social-icon:hover .fa-github { color: #333; }
+.social-icon:hover .fa-linkedin { color: #0077b5; }
+.social-icon:hover .fa-facebook { color: #1877f2; }
+.social-icon:hover .fa-instagram { 
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social-icon:hover .fa-whatsapp { color: #25d366; }
+.social-icon:hover .fa-envelope { color: #ea4335; }
+
+/* Glass morphism effect for sections */
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(
+        45deg,
+        rgba(255, 255, 255, 0.1),
+        rgba(255, 255, 255, 0.05)
+    );
+    backdrop-filter: blur(10px);
+    z-index: -1;
+    transform: translateZ(-1px);
+}
+
+/* 3D Gradient borders */
+.project-card, .skill-category {
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card::after, .skill-category::after {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+        45deg,
+        transparent,
+        rgba(255, 255, 255, 0.1),
+        transparent
+    );
+    transform: rotate(45deg);
+    animation: gradient-animation 3s linear infinite;
+}
+
+@keyframes gradient-animation {
+    0% { transform: rotate(45deg) translateX(-100%); }
+    100% { transform: rotate(45deg) translateX(100%); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .social-icon {
+        margin: 0 10px;
+        padding: 10px;
+        font-size: 1.5rem;
+    }
+    
+    .project-card:hover,
+    .skill-category:hover {
+        transform: translateZ(20px) rotateX(3deg);
+    }
+}
+body {
+    perspective: 1000px;
+}
+
+/* 3D Card Effect */
+.project-card {
+    transform-style: preserve-3d;
+    transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    backface-visibility: hidden;
+}
+
+.project-card:hover {
+    transform: rotateY(10deg) rotateX(5deg);
+}
+
+/* 3D Logo Animation */
+.logo {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    animation: logo3D 2s infinite;
+}
+
+@keyframes logo3D {
+    0% { transform: translateZ(0) rotateY(0); }
+    50% { transform: translateZ(20px) rotateY(180deg); }
+    100% { transform: translateZ(0) rotateY(360deg); }
+}
+
+/* 3D Skill Category Effect */
+.skill-category {
+    transform-style: preserve-3d;
+    transition: transform 0.4s ease;
+}
+
+.skill-category:hover {
+    transform: translateZ(30px) rotateX(5deg);
+}
+
+/* 3D Hero Text Effect */
+.hero h1 {
+    position: relative;
+    transform-style: preserve-3d;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateZ(0); }
+    50% { transform: translateZ(20px); }
+    100% { transform: translateZ(0); }
+}
+
+/* 3D Button Effect */
+.cta-button {
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.cta-button:hover {
+    transform: translateZ(20px) scale(1.05);
+}
+
+/* 3D Social Icons */
+.social-links a {
+    transform-style: preserve-3d;
+    transition: transform 0.3s ease;
+}
+
+.social-links a:hover {
+    transform: translateZ(30px) scale(1.2);
+}
+
+/* Mouse move parallax effect container */
+.parallax-container {
+    transform-style: preserve-3d;
+    transform: perspective(1000px);
+}
